@@ -1,0 +1,177 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <title>MyTipPlanner</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../static/css/glyphicons.css">
+    <link href="../../static/css/mytrip.css">
+    <link href="../../static/css/font-awesome.css">
+    <link href="../../static/css/font-awesome.min.css">
+    <link href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            background-color: #282749;
+        }
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 500px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: darkslateblue;
+            color: white;
+            padding: 15px;
+        }
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .row.content {
+                height: auto;
+            }
+        }
+        .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #0C0B4D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+        .login-block{
+    {#background: darkorchid;  /* fallback for old browsers */#}
+{#background: -webkit-linear-gradient(to bottom,darkorchid, darkmagenta);  /* Chrome 10-25, Safari 5.1-6 */#}
+{#background: linear-gradient(to bottom,darkorchid, darkmagenta); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */#}
+float:left;
+width:100%;
+padding : 50px 0;
+}
+.banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
+.container{background:#fff; background: rgba(255, 255, 255, 0.4); border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+.carousel-inner{border-radius:0 10px 10px 0;}
+.carousel-caption{text-align:left; left:5%;}
+.login-sec{padding: 50px 30px; position:relative;}
+.login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
+.login-sec .copy-text i{color: darkorchid;}
+.login-sec .copy-text a{color:deeppink;}
+.login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #44426A;}
+.login-sec h2:after{content:" "; width:100px; height:5px; background:#24BAD8; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+.btn-login{background:#A28BCF; color:#3E2275; font-weight:600;}
+.banner-text{width:70%; position:absolute; top:40px; padding-left:20px;}
+.banner-text h2{color:#0C0B4D; font-weight:600;}
+.banner-text h2:after{content:" "; width:100px; height:5px; background:#24BAD8; display:block; margin-top:20px; border-radius:3px;}
+.banner-text h4{color:purple; font-weight:600;}
+.banner-text p{color:#fff;}
+        .box{
+  background:#0C0B4D;
+  width:400px;
+  border-radius:3px;
+  margin: 0 auto 0 auto;
+  padding:0px 0px 70px 0px;
+  border: azure 4px solid;
+}
+
+    </style>
+</head>
+<body id="app-layout" class="body" background="{% static 'images/background.jpg' %}" style="height: 100%;
+  background-repeat: no-repeat;background-size: cover;">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <img src="{% static 'images/globe.png' %}" width="60" height="40" alt="logo">
+
+            <a class="navbar-brand" href="{% url 'mytrip:home' %}" style="float: right; text-align: center">
+                MyTripPlanner
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar" style="float: right;">
+            <ul class="nav navbar-nav">
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'mytrip:home' %}">Home</a></li>
+                    <li><a href="{% url 'mytrip:home' %}">Flights</a></li>
+                <li><a href="{% url 'mytrip:home' %}">Hotels</a></li>
+                <li><a href="{% url 'mytrip:home' %}">Food</a></li>
+                {% endif %}
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                           More options <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{% url 'logout' %}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+{#<div class="content container">#}
+{#    <div class="row">#}
+{#        <div class="col-md-12">#}
+            {% block content %}
+            {% endblock %}
+{#            </div>#}
+{#        </div>#}
+{#</div>#}
+</body>
+</html>

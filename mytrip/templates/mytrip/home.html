@@ -1,0 +1,40 @@
+{% extends 'mytrip/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <section class="login-block">
+        <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 login-sec">
+        <h2 class="text-center">Welcome to MyTripplanner</h2>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="page-container">
+
+                    <h2 class="top-menu">Hello {{ user.username }},</h2>
+
+                </div>
+            {% else %}
+                    <div class="col-md-8">
+                        <div class="links">
+                           <h4 style="color: darkblue"> This apllication will allow users to collate and plan their trips.</h4>
+                            <h4 style="color: darkblue"> Login to Experience our services</h4>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-3">
+                    <br>
+                    <br>
+
+                        <br>
+
+ <button class="button"style="vertical-align:middle"><a href="{% url 'login' %}"><span>Login </span></a></button>
+{% endif %}
+                    </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}
