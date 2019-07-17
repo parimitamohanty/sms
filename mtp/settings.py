@@ -121,3 +121,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'v5storein@gmail.com'
+EMAIL_HOST_PASSWORD = 'isqa4900'
+#EMAIL_PORT = 2525
+EMAIL_PORT = 587
