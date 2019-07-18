@@ -26,7 +26,9 @@
                     <div class="form-check">
                         <div class="row">
                             <button type="submit" class="btn btn-login" >Login</button>
-                            <button type="submit" class="btn btn-login" >Connect with Facebook</button>
+                             <button class="btn btn-primary mb-2">
+                <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+            </button>
                         </div>
                         <br>
                         <div class="row">

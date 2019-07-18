@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('mytrip.urls')),
     url(r'^accounts/login/$', views.login, name='login'),
     url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'}),
+    path('social-auth/', include('social_django.urls', namespace="social")),
 ]

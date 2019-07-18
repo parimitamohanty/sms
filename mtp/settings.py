@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +108,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+        'social_core.backends.instagram.InstagramOAuth2',
+        'social_core.backends.facebook.FacebookOAuth2',
+        'django.contrib.auth.backends.ModelBackend',
+    ]
+
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = 487136172097390        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'aa0207128fc068149953a24786f595f8'  # App Secret
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
