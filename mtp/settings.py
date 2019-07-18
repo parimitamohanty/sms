@@ -31,13 +31,13 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'mytrip',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mytrip',
     'crispy_forms',
 ]
 
@@ -52,6 +52,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mtp.urls'
+
+EMAIL_HOST = 'smtp.gmail.com' # mail service smtp
+EMAIL_HOST_USER = 'mytrip.plannerapp' # email id
+EMAIL_HOST_PASSWORD = 'isqa8380t4' #password
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 TEMPLATES = [
     {
@@ -121,12 +127,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'v5storein@gmail.com'
-EMAIL_HOST_PASSWORD = 'isqa4900'
-#EMAIL_PORT = 2525
-EMAIL_PORT = 587

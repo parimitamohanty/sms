@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import *
-from .forms import *
+from .forms import LoginForm,UserRegistrationForm
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 
@@ -23,5 +23,5 @@ def register(request):
             new_user.save()
             return render(request, 'mytrip/register_done.html', {'new_user': new_user})
     else:
-      user_form = UserRegistrationForm()
-      return render(request, 'mytrip/register.html', {'user_form': user_form})
+        user_form = UserRegistrationForm()
+    return render(request, 'mytrip/register.html', {'user_form': user_form})
