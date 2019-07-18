@@ -12,7 +12,30 @@
         <br xmlns:align-content="http://www.w3.org/1999/xhtml" xmlns:align-content="http://www.w3.org/1999/xhtml"/>
     <!--<p>Your username and password didn't match. Please try again.</p>-->
     {% endif %}
+<body>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '487136172097390',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.3'
+    });
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</body>
     <section class="login-block">
     <div class="container">
         <div class="row">
@@ -27,6 +50,11 @@
                         <div class="row">
                             <button type="submit" class="btn btn-login" >Login</button>
                              <button class="btn btn-primary mb-2">
+
+                    <fb:login-button
+                            scope="public_profile,email"
+                            onlogin="checkLoginState();">
+                    </fb:login-button>
                 <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
             </button>
                         </div>
