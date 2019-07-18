@@ -86,10 +86,10 @@ LOGIN_REDIRECT_URL = '/home'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd30bv47lesru9j',
-        'USER': 'lakiqrhxzkfprw',
-        'PASSWORD': '523a2bdb8e1429230441422d44f1ce75c8a3755e937742997e6af0552a8fa844',
-        'HOST': 'ec2-174-129-41-127.compute-1.amazonaws.com',
+        'NAME': 'dcvq5j8oa5738p',
+        'USER': 'sqzzedqdkmcwkh',
+        'PASSWORD': '749b3863b32524d455e200830d1d36b1aff412e059180b25ca7cefe126391a7e',
+        'HOST': 'ec2-107-21-126-201.compute-1.amazonaws.com',
         'PORT': '5432',
 
     }
@@ -146,6 +146,13 @@ STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = '/home'
 
+
+
+# Update database configuration with $DATABASE_URL.
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+DATABASES['default'] = dj_database_url.config()
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
@@ -154,16 +161,13 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
+
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
 
-# Update database configuration with $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-DATABASES['default'] = dj_database_url.config()
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
