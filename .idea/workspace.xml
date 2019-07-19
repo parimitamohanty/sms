@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a02e0df-f4e7-4ab0-a17e-d55e4f06b0b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mtp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtp/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -154,7 +153,7 @@
         <entry file="file://$PROJECT_DIR$/mtp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="104">
-              <caret line="124" column="43" selection-start-line="124" selection-start-column="43" selection-end-line="124" selection-end-column="43" />
+              <caret line="124" column="43" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="43" />
               <folding>
                 <element signature="e#304#313#0" expanded="true" />
               </folding>
@@ -757,7 +756,7 @@
     <entry file="file://$PROJECT_DIR$/mtp/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
-          <caret line="124" column="43" selection-start-line="124" selection-start-column="43" selection-end-line="124" selection-end-column="43" />
+          <caret line="124" column="43" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="43" />
           <folding>
             <element signature="e#304#313#0" expanded="true" />
           </folding>
