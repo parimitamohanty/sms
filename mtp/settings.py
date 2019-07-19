@@ -122,8 +122,8 @@ AUTHENTICATION_BACKENDS = [
 
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = '2386878641347433'        # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '646bf5b6258fb5d9756c21766bd0148b'  # App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = '485485162183661'        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ba99c25a7b010024f6bcb546bf5519a4'  # App Secret
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
