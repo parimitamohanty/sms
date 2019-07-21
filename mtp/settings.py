@@ -136,6 +136,9 @@ ACCOUNT_USERNAME_REQUIRED = False
 SOCIAL_AUTH_FACEBOOK_KEY = '485485162183661'        # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'ba99c25a7b010024f6bcb546bf5519a4'  # App Secret
 
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
