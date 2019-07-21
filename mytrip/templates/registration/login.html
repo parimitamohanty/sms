@@ -7,6 +7,7 @@
 </head>
 {% extends "mytrip/base.html" %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
 {% block content %}
     {% if form.errors %}
         <br xmlns:align-content="http://www.w3.org/1999/xhtml" xmlns:align-content="http://www.w3.org/1999/xhtml"/>
@@ -23,19 +24,23 @@
                         {{form|crispy}}
                     </div>
                     <div class="form-check">
-                        <div class="row">
-                            <button type="submit" class="btn btn-login" >Login</button>
-                             <button type="submit" class="btn btn-login">
+                        <br class="row">
 
-                                 <a href="{% url 'social:begin' 'facebook' %}"><font color="black"><b>Login with Facebook</b></font></a>
+                        <button type="submit" class="btn btn-login" ><font color="black" >Login</font></button>
+<span></span>
+                        <button type="submit" class="btn btn-login">
+                        <a href="{% provider_login_url 'google' %}"><font color="black" > Log In with Gmail</font></a>
+                        </button>
+                        <br></br>
+                            <button type="submit" class="btn btn-login">
+                                <a href="{% url 'social:begin' 'facebook' %}"><font color="black"><b>Login with Facebook</b></font></a>
                          </button>
-                        </div>
-                        <br>
+                        <br></br>
                         <div class="row">
                         <button class="btn btn-login"><a style="color:#0C0B4D " href="{% url "mytrip:password_reset" %}">Forgotten your password?</a></button>
                         </div>
                         <br>
-                        <p style="color: #0C0B4D">  If you don't have an account <a href="{% url "mytrip:register" %}">Sign Up Here</a></p>
+                        <p style="color: #0C0B4D"> <b> If you don't have an account </b><a href="{% url "mytrip:register" %}"><button type="submit" class="btn btn-login"><font color="black"> Sign Up Here</font></button></a></p>
 
         <!--<p><input type="submit" value="Login"/></p>-->
 <div class="row">

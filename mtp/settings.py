@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth', # added for google auth
+    'allauth.account', # added for google auth
+    'allauth.socialaccount', # added for google auth
+    'allauth.socialaccount.providers.google', # added for google auth
     'crispy_forms',
     'social_django',
 ]
@@ -118,9 +123,15 @@ AUTHENTICATION_BACKENDS = [
         'social_core.backends.instagram.InstagramOAuth2',
         'social_core.backends.facebook.FacebookOAuth2',
         'django.contrib.auth.backends.ModelBackend',
+        'django.contrib.auth.backends.ModelBackend',
+        'allauth.account.auth_backends.AuthenticationBackend',
     ]
 
 
+#SITE_ID = 1
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
 
 SOCIAL_AUTH_FACEBOOK_KEY = '485485162183661'        # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'ba99c25a7b010024f6bcb546bf5519a4'  # App Secret
