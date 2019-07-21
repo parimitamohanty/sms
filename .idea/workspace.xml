@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a02e0df-f4e7-4ab0-a17e-d55e4f06b0b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mtp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtp/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,7 +69,7 @@
         <counts>
           <entry key="Procfile" value="3" />
           <entry key="html" value="408" />
-          <entry key="py" value="111" />
+          <entry key="py" value="112" />
           <entry key="txt" value="39" />
         </counts>
       </usages-collector>
@@ -76,7 +77,7 @@
         <counts>
           <entry key="HTML" value="408" />
           <entry key="PLAIN_TEXT" value="42" />
-          <entry key="Python" value="111" />
+          <entry key="Python" value="112" />
         </counts>
       </usages-collector>
     </session>
