@@ -27,18 +27,18 @@
                         <br class="row">
 
                         <button type="submit" class="btn btn-login" ><font color="black" >Login</font></button>
-<span></span>
+<span></span>    &nbsp
                         <button type="submit" class="btn btn-login">
                         <a href="{% provider_login_url 'google' %}"><font color="black" > Log In with Gmail</font></a>
                         </button>
-                        <br></br>
+                        <br><br class="row">
                             <button type="submit" class="btn btn-login">
-                                <a href="{% url 'social:begin' 'facebook' %}"><font color="black"><b>Login with Facebook</b></font></a>
-                         </button>
-                        <br></br>
-                         <button class="btn btn-danger  mb-2">
-            <a href="{% url 'social:begin' 'instagram' %}">Login with Instagram</a>
-        </button>
+                                <a href="{% url 'social:begin' 'facebook' %}"><font color="black"><b>Facebook Login</b></font></a>
+                            </button> <span></span> &nbsp
+                         <button type="submit" class="btn btn-login">
+                             <a href="{% url 'social:begin' 'instagram' %}"><font color="black"><b>Instagram Login</b></font></a>
+                          </button>
+                        <br><br>
                         <div class="row">
                         <button class="btn btn-login"><a style="color:#0C0B4D " href="{% url "mytrip:password_reset" %}">Forgotten your password?</a></button>
                         </div>
