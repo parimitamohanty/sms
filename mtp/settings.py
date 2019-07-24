@@ -194,6 +194,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+RAPIDAPI_API_KEY = '7a73c4ac47msh496c7d5b0f4c841p15456djsn4acd7e84244b'
+
 try:
     from .local_settings import *
 except ImportError:
