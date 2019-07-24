@@ -59,6 +59,11 @@ class weather(TemplateView):
                     'temperature': json_data['main']['temp'],
                     'description': json_data['weather'][0]['description'],
                     'icon': json_data['weather'][0]['icon'],
+                    'humidity' : json_data['main']['humidity'],
+                    'min_temp': json_data['main']['temp_min'],
+                    'max_temp': json_data['main']['temp_max'],
+                    'wind': json_data['wind']['speed'],
+                    'visibility': json_data['visibility'],
                     }
                 weather_data.append(city_weather)
                 context = {
