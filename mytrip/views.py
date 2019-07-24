@@ -48,8 +48,9 @@ class weather(TemplateView):
             form = CityForm()
             main_api = 'http://api.openweathermap.org/data/2.5/weather?q='
             api_key = '&units=metric&appid=907d8c401b542c8e7ede79a3ddea8f1a'
-            # main_api = 'http://api.openweathermap.org/data/2.5/forecast?q='
-            # api_key = '&units=metric&appid=907d8c401b542c8e7ede79a3ddea8f1a'
+            main_api1 = 'http://api.openweathermap.org/data/2.5/forecast?q='
+            url1 = main_api1 + city + api_key
+            forecast = requests.get(url1).json()
             url= main_api + city + api_key
             json_data= requests.get(url).json()
             if json_data['cod']==200:
@@ -71,6 +72,12 @@ class weather(TemplateView):
                      'form': form,
                 }
                 return render(request, self.template_name, context)
+            elif forecast['cod']==200:
+                context={
+                    'forecast':requests.get(url1).json(),
+                    'form':form,
+                }
+                return render(request, self.template_name, context)
             else:
                 error='Please Check the Name of the City'
                 form= CityForm()
@@ -80,7 +87,32 @@ class weather(TemplateView):
                 }
                 return render(request, self.template_name, context)
 
-
+def forecast(self, request):
+        form = CityForm(request.POST)
+        if form.is_valid():
+            city = form.cleaned_data['city']
+            form = CityForm()
+            # main_api = 'http://api.openweathermap.org/data/2.5/weather?q='
+            # api_key = '&units=metric&appid=907d8c401b542c8e7ede79a3ddea8f1a'
+            main_api = 'http://api.openweathermap.org/data/2.5/forecast?q='
+            api_key = '&units=metric&appid=907d8c401b542c8e7ede79a3ddea8f1a'
+            url= main_api + city + api_key
+            json_data= requests.get(url).json()
+            if json_data['cod']==200:
+                form = CityForm()
+                context = {
+                    'data': json_data,
+                    'form': form,
+                }
+                return render(request, self.template_name, context)
+            else:
+                error='Please Check the Name of the City'
+                form= CityForm()
+                context={
+                    'error':error,
+                    'form' : form,
+                }
+                return render(request, self.template_name, context)
 
 
 
